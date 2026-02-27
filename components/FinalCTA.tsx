@@ -57,7 +57,7 @@ export default function FinalCTA() {
               </a>
 
               <a
-                href="tel:+918308102334"
+                href="tel:+918605834438"
                 className="group flex items-center gap-4 p-4 rounded-2xl bg-white/5 border border-white/10 transition-all duration-300"
               >
                 <div className="w-12 h-12 rounded-full bg-yellow-500/20 flex items-center justify-center group-hover:scale-110 transition-transform shrink-0">
@@ -65,7 +65,7 @@ export default function FinalCTA() {
                 </div>
                 <div>
                   <h4 className="text-white font-medium text-lg">Call Us</h4>
-                  <p className="text-gray-400 text-sm">+91 830 810 2334</p>
+              
                 </div>
               </a>
 
