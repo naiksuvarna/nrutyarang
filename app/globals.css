@@ -29,16 +29,39 @@
   .glow-box-gold {
     box-shadow: 0 0 20px rgba(250, 204, 21, 0.3);
   }
+
+  /* Utility class to hide scrollbar on specific nested elements if needed later */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
 }
 
+/* Global HTML Scrollbar Hiding */
 html {
   scroll-behavior: smooth;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
 }
 
+html::-webkit-scrollbar {
+  display: none; /* Chrome, Safari and Opera */
+}
+
+/* Global Body Scrollbar Hiding */
 body {
   background-color: #0f0518;
   background-image: radial-gradient(circle at 50% 0%, #3B0764 0%, #0f0518 70%);
   background-attachment: fixed;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+body::-webkit-scrollbar {
+  display: none; /* Chrome, Safari and Opera */
 }
 
 /* Marquee Animation */

@@ -8,8 +8,14 @@ import Image from 'next/image';
 export default function Hero() {
   return (
     <section className="relative h-[100dvh] min-h-[580px] w-full flex items-center justify-center overflow-hidden">
-      {/* Background Image */}
-      <div className="absolute inset-0 z-0">
+      
+      {/* Background Image - Added Cinematic Fade & Slow Zoom */}
+      <motion.div 
+        initial={{ opacity: 0, scale: 1.1 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 1.8, ease: 'easeOut' }}
+        className="absolute inset-0 z-0"
+      >
         <Image
           src="/bg.png" 
           alt="Classical Dancer Silhouette"
@@ -19,12 +25,17 @@ export default function Hero() {
           referrerPolicy="no-referrer"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-[#0f0518]/80 via-[#3B0764]/40 to-[#0f0518] mix-blend-multiply" />
-      </div>
+      </motion.div>
 
       <Particles />
       
       {/* Spotlight Glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] md:w-[600px] md:h-[600px] lg:w-[800px] lg:h-[800px] bg-purple-900/40 rounded-full blur-[80px] md:blur-[120px] pointer-events-none z-0" />
+      <motion.div 
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 2, delay: 0.5 }}
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] md:w-[600px] md:h-[600px] lg:w-[800px] lg:h-[800px] bg-purple-900/40 rounded-full blur-[80px] md:blur-[120px] pointer-events-none z-0" 
+      />
 
       {/* Main Content Container */}
       <div className="container mx-auto px-4 sm:px-6 relative z-10 text-center flex flex-col items-center justify-center w-full h-full max-h-full py-4">
@@ -33,7 +44,7 @@ export default function Hero() {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: 'easeOut' }}
+          transition={{ duration: 0.8, ease: 'easeOut', delay: 0.2 }}
           className="mb-4 md:mb-6 shrink-0 mt-8 md:mt-0"
         >
           <span className="px-3 md:px-4 py-1.5 md:py-2 rounded-full border border-yellow-500/30 bg-yellow-500/10 text-yellow-300 text-[10px] sm:text-xs md:text-sm font-medium tracking-wider uppercase backdrop-blur-sm shadow-[0_0_15px_rgba(250,204,21,0.2)]">
@@ -41,11 +52,11 @@ export default function Hero() {
           </span>
         </motion.div>
 
-        {/* Title Image */}
+        {/* Title Image - Enhanced with Upward Glide and Smooth Spring Easing */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1, delay: 0.2, ease: 'easeOut' }}
+          initial={{ opacity: 0, scale: 0.85, y: 40 }}
+          animate={{ opacity: 1, scale: 1, y: 0 }}
+          transition={{ duration: 1.2, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
           className="relative flex justify-center items-center w-full max-w-[1100px] h-[22vh] sm:h-[30vh] md:h-[40vh] lg:h-[45vh] mb-5 md:mb-8 shrink-0 mx-auto"
         >
           <Image 
@@ -61,7 +72,7 @@ export default function Hero() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
           className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8 lg:gap-12 mb-8 md:mb-10 text-gray-200 w-full max-w-4xl shrink-0 mx-auto"
         >
           {/* Mobile: Date & Time share a row */}
@@ -78,7 +89,7 @@ export default function Hero() {
               </div>
             </div>
             
-            {/* Divider between Date & Time (Visible on both Mobile & Desktop) */}
+            {/* Divider between Date & Time */}
             <div className="w-px h-8 md:h-10 bg-white/10" /> 
             
             {/* Time */}
@@ -113,7 +124,7 @@ export default function Hero() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
+          transition={{ duration: 0.8, delay: 0.8 }}
           className="flex flex-col items-center shrink-0 w-full px-4 pt-2"
         >
           <button 

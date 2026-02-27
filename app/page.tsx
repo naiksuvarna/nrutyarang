@@ -9,21 +9,37 @@ export default function Home() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Event",
-    "name": "Nrutyarang 2026",
-    "startDate": "2026-03-05T16:00",
-    "endDate": "2026-03-05T19:00",
+    "name": "Nrutyarang 2026 - Marathi Cultural Dance Program",
+    "startDate": "2026-03-05T16:00:00+05:30",
+    "endDate": "2026-03-05T19:00:00+05:30",
     "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
     "eventStatus": "https://schema.org/EventScheduled",
+    "image": [
+      // UPDATED IMAGE URL BELOW
+      "https://nrutyarang.gaganbharari.com/nrutya.png" 
+    ],
     "location": {
       "@type": "Place",
       "name": "Mahakavi Kalidas Kalamandir",
       "address": {
         "@type": "PostalAddress",
+        "streetAddress": "Shalimar",
         "addressLocality": "Nashik",
-        "addressCountry": "India"
+        "postalCode": "422001",
+        "addressRegion": "Maharashtra",
+        "addressCountry": "IN"
       }
     },
-    "description": "A grand Marathi cultural dance event in Nashik.",
+    "description": "Looking for events near you? Nrutyarang 2026 is a grand Marathi cultural dance competition and event in Nashik at Kalidas Kalamandir.",
+    "offers": {
+      "@type": "Offer",
+      // UPDATED BOOKING URL BELOW
+      "url": "https://nrutyarang.gaganbharari.com/#booking",
+      "price": "50",
+      "priceCurrency": "INR",
+      "availability": "https://schema.org/InStock",
+      "validFrom": "2026-02-01T00:00:00+05:30"
+    },
     "organizer": {
       "@type": "Organization",
       "name": "Gagan Bharari Group & A-Cube Holidays and Events"
