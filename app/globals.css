@@ -1,0 +1,63 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@theme {
+  --color-gold-300: #FDE047;
+  --color-gold-400: #FACC15;
+  --color-gold-500: #EAB308;
+  --color-gold-600: #CA8A04;
+  
+  --color-maroon-800: #581C87;
+  --color-maroon-900: #3B0764;
+  --color-maroon-950: #2E064E;
+
+  --font-sans: var(--font-sans);
+  --font-serif: var(--font-serif);
+  --font-marathi: var(--font-marathi);
+}
+
+@layer utilities {
+  .text-gradient-gold {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-yellow-200 via-yellow-400 to-yellow-600;
+  }
+  .bg-gradient-gold {
+    @apply bg-gradient-to-r from-yellow-200 via-yellow-400 to-yellow-600;
+  }
+  .glow-gold {
+    text-shadow: 0 0 20px rgba(250, 204, 21, 0.5);
+  }
+  .glow-box-gold {
+    box-shadow: 0 0 20px rgba(250, 204, 21, 0.3);
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #0f0518;
+  background-image: radial-gradient(circle at 50% 0%, #3B0764 0%, #0f0518 70%);
+  background-attachment: fixed;
+}
+
+/* Marquee Animation */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
+
+/* Shimmer Animation */
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+.animate-shimmer {
+  background-size: 200% auto;
+  animation: shimmer 4s linear infinite;
+}
